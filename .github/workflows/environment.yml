@@ -1,0 +1,12 @@
+name: Environment
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: master
+    steps:
+      - run: echo "Branch is ${BRANCH}" # 環境変数を参照する
+      - uses: actions/checkout@v4 # GitHubリポジトリをチェックアウトする
+        with:
+          ref: ${{ env.BRANCH }} # 環境変数を参照する
