@@ -1,0 +1,10 @@
+name: intermediate_environment
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }} # GitHubコンテキストを参照する
+    steps:
+      - run: echo "${ACTOR}" # コンテキストの値は直接シェルは埋め込むとバグる可能性があるので、環墩変数に代入してから使うのが基本方針
+
