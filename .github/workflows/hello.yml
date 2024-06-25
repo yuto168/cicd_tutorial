@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest # This is the machine that will run the job
     steps:
       - run: echo "Hello, world!" # runはシェルコマンドを実行する
-      - uses: actions/checkout@v4 # Githubレポジトリのコードをコピーする
+      - uses: actions/checkout@v4
