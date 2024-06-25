@@ -1,0 +1,8 @@
+name: Hello # 省略可能だがログで判別できなくなるので基本的に書く
+on: push
+jobs:
+  hello:
+    runs-on: ubuntu-latest # This is the machine that will run the job
+    steps:
+      - run: echo "Hello, world!" # runはシェルコマンドを実行する
+      - uses: actions/checkout@v4
