@@ -1,0 +1,14 @@
+name: Manual
+on:
+  workflow_dispatch: # マニュアルトリガーを有効にする
+    inputs:
+      greeting:
+        type: string # パラメータの型を指定
+        required: true
+        default: "hello"
+        description: "Name of the person to greet"
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, ${{ inputs.greeting }}!"
