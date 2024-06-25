@@ -1,0 +1,14 @@
+name: GoTest
+on:
+  pull_request:
+    paths:
+      - "**.go" # プルリクエストがGOファイルを変更した場合にのみ実行する
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 # リポジトリからソースコードを取得する
+      - uses: actions/setup-go@v5 # 使用する言語バージョンを指定する
+        with:
+          go-version: 1.22
+      - run: go test go/excellent/*.go # テストを実行する
