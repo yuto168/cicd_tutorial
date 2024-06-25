@@ -4,6 +4,7 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, ${{ github.actor }}!"
+      - run: echo "Hello, ${{ github.actor }}!" |
+          echo "github.run_id, ${{ github.run_id }}!"
         # github.run_idが1を含む場合にのみ実行する
         if: ${{contains(github.run_id, '1')}}
